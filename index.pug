@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="stylesheet", href="assets/css/style.css")
+    title Кинотетр
+  body
+  .container 
+    .row 
+      .l-side
+        ul.menu
+          li.drop.l-line.active 
+            span.menu-text Действия
+            span.menu-arrow 
+              include assets/img/arrows.svg 
+            ul.sub-menu 
+              li Просмотры 
+              li.active Избранное 
+              li Отложенное  
+          li.drop 
+            span.menu-text Тарифы
+            span.menu-arrow 
+              include assets/img/arrows.svg 
+            ul.sub-menu 
+              li Item 1 
+              li Item 2   
+          li 
+            span.menu-text Настройки  
+
+      .r-side 
+        .wrap
+          .mobile
+            span 
+          h1.title Избранное 
+        
+        .row 
+          - for (var x = 0; x < 10; x++)  
+            .col  
+              .block
+                .block-img 
+                  img(src="assets/img/banner.jpg", alt="13 причин почему")
+                  .block-hover 
+                    .block-hover-row 
+                      .block-hover-like 
+                        include assets/img/heart-active.svg 
+                      .block-hover-remove
+                        include assets/img/close.svg 
+                    .block-hover-play 
+                      include assets/img/play.svg
+                    .block-hover-row 
+                      .block-hover-rait КП: 
+                        span 7.5
+                      .block-hover-rait IMDb: 
+                        span 7.7
+                .block-rating 
+                  .block-rating-am.good 
+                    include assets/img/like.svg
+                    span 25
+                  .block-rating-am.bad
+                    include assets/img/dislike.svg
+                    span 5
+                h3.block-title 13 причин почему 
+                .block-num 4 сезона, 8 серий
+
+  script(src="assets/js/app.js")
+  
+            

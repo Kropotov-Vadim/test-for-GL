@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap')
+  
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+  font-family: 'Roboto', sans-serif
+
+body 
+  background-color: #151618  
+  &.active
+    overflow: hidden
+
+.container 
+  width: 100%
+  max-width: 1630px
+  padding: 50px 15px
+  margin: 0 auto
+
+.row 
+  display: flex
+  flex-wrap: wrap
+
+.l-side 
+  width: 300px
+  padding: 0 25px
+
+.r-side 
+  width: calc( 100% - 300px )
+  .row 
+    margin: 0 -15px
+
+.mobile 
+  display: none
+
+.menu 
+  li 
+    list-style: none 
+    display: flex
+    align-items: center
+    flex-wrap: wrap
+    cursor: pointer
+    position: relative
+    margin-bottom: 20px
+    &:last-child
+      margin-bottom: 0
+    &.l-line::before 
+      content: ''
+      display: block
+      position: absolute
+      top: 0
+      left: -10px
+      width: 2px
+      height: 26px 
+      background-color: red
+    .menu-text 
+      color: #fff 
+      font-size: 20px
+    .menu-arrow 
+      margin-left: 8px
+    &.active 
+      .sub-menu 
+        display: block
+    .sub-menu 
+      margin-top: 15px
+      width: 100%
+      display: none
+      li
+        padding: 10px 20px
+        border-radius: 40px 
+        color: #797268 
+        max-width: max-content
+        cursor: pointer
+        margin-bottom: 0
+        &.active 
+          background-color: #222423 
+          color: #fff 
+      
+
+.title 
+  font-size: 30px
+  font-weight: 400
+  color: #fff 
+  
+.wrap 
+  margin-bottom: 30px
+
+.col 
+  padding: 0 15px
+  width: 20% 
+  margin-bottom: 30px
+
+.block 
+  &-img 
+    width: 100% 
+    position: relative 
+    border-radius: 10px 
+    overflow: hidden
+    box-shadow: 0px 0px 40px 3px rgba(0,0,0,0.75)
+    display: flex
+    justify-content: center
+    align-items: center
+    img 
+      width: 100%
+      height: 100%
+    &:hover 
+      .block-hover 
+        opacity: 1
+  &-hover 
+    position: absolute
+    opacity: 0
+    transition: .2s
+    top: 0 
+    left: 0
+    right: 0
+    bottom: 0 
+    background-color: rgba(0,0,0,0.5)
+    padding: 15px
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    align-items: center
+    &-row 
+      display: flex
+      align-items: center
+      justify-content: space-between
+      width: 100%
+    &-like 
+      width: 25px
+      cursor: pointer
+      svg 
+        width: 100%
+    &-remove 
+      cursor: pointer
+      width: 25px
+      position: relative
+      svg 
+        width: 100% 
+    &-rait 
+      color: #fff 
+      font-size: 14px
+      span 
+        font-weight: 500
+    &-play 
+      cursor: pointer
+      width: 60px
+      height: 60px
+      display: flex
+      justify-content: center
+      align-items: center
+      border-radius: 50% 
+      background-color: #4e4e50bb
+      svg 
+        width: 30px
+
+  &-rating 
+    display: flex
+    justify-content: space-between
+    align-items: center
+    margin-top: 15px
+    &-am 
+      color: #7d7e80 
+      display: flex
+      align-items: center
+      span 
+        margin-left: 9px
+  &-title 
+    color: #fff 
+    font-size: 18px
+    font-weight: 500
+    margin: 10px 0
+  &-num 
+    color: #7d7e80 
+    
+@media ( max-width: 1300px )
+  .col 
+    width: 25%
+
+@media ( max-width: 1050px )
+  .l-side 
+    transform: translateX(-300px)
+    transition: .4s
+    position: fixed
+    z-index: 10
+    background-color: #151618
+    padding: 30px
+    padding-top: 90px
+    top: 0
+    left: 0
+    bottom: 0
+    &.active 
+      transform: translateX(0)
+  .r-side 
+    width: 100%
+  .wrap 
+    display: flex
+    justify-content: space-between
+    align-items: center
+  .mobile 
+    display: flex
+    justify-content: center
+    align-items: center
+    width: 30px
+    height: 30px
+    z-index: 12
+    span 
+      width: 100% 
+      height: 2px
+      background-color: #7d7e80
+      border-radius: 2px
+      transition: .1s 
+      position: relative
+      &::after, &::before
+        position: absolute
+        content: ''
+        display: block
+        width: 100%
+        transition: .3s 
+        height: 2px
+        background-color: #7d7e80
+        transform: translateY(8px)
+      &::before
+        transform: translateY(-8px)
+    &.active
+      span 
+        height: 0
+        &::after
+          transform: rotate(45deg)
+        &::before
+          transform: rotate(-45deg)
+
+@media ( max-width: 800px )
+  .col 
+    width: 33.3333%
+
+@media ( max-width: 560px )
+  .col 
+    width: 50%
+  .block-title
+    font-size: 16px
+
+
+@media ( max-width: 360px )
+  .col 
+    width: 100%
